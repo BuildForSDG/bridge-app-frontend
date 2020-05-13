@@ -1,3 +1,4 @@
+
 (function($) {
 	
 	"use strict";
@@ -34,42 +35,82 @@
 		
 	}
 
-	//Mobile Nav Hide Show
-	if($('.mobile-menu').length){
-		
-		$('.mobile-menu .menu-box').mCustomScrollbar();
-		
-		var mobileMenuContent = $('.main-header .menu-area .main-menu').html();
-		$('.mobile-menu .menu-box .menu-outer').append(mobileMenuContent);
-		$('.sticky-header .main-menu').append(mobileMenuContent);
-		
-		//Dropdown Button
-		$('.mobile-menu li.dropdown .dropdown-btn').on('click', function() {
-			$(this).toggleClass('open');
-			$(this).prev('ul').slideToggle(500);
-		});
-		//Menu Toggle Btn
-		$('.mobile-nav-toggler').on('click', function() {
-			$('body').addClass('mobile-menu-visible');
-		});
+	function handleMobileMenu() {
+		//Mobile Nav Hide Show
+		if($('.mobile-menu').length){
+			
+			$('.mobile-menu .menu-box').mCustomScrollbar();
+			
+			var mobileMenuContent = $('.main-header .menu-area .main-menu').html();
+			$('.mobile-menu .menu-box .menu-outer').append(mobileMenuContent);
+			$('.sticky-header .main-menu').append(mobileMenuContent);
+			
+			//Dropdown Button
+			$('.mobile-menu li.dropdown .dropdown-btn').on('click', function() {
+				$(this).toggleClass('open');
+				$(this).prev('ul').slideToggle(500);
+			});
+			//Menu Toggle Btn
+			$('.mobile-nav-toggler').on('click', function() {
+				$('body').addClass('mobile-menu-visible');
+			});
 
-		//Menu Toggle Btn
-		$('.mobile-menu .menu-backdrop,.mobile-menu .close-btn').on('click', function() {
-			$('body').removeClass('mobile-menu-visible');
-		});
+			//Menu Toggle Btn
+			$('.mobile-menu .menu-backdrop,.mobile-menu .close-btn').on('click', function() {
+				$('body').removeClass('mobile-menu-visible');
+			});
+		}
 	}
+	handleMobileMenu();
+
+	// //Mobile Nav Hide Show
+	// if($('.mobile-menu').length){
+		
+	// 	$('.mobile-menu .menu-box').mCustomScrollbar();
+		
+	// 	var mobileMenuContent = $('.main-header .menu-area .main-menu').html();
+	// 	$('.mobile-menu .menu-box .menu-outer').append(mobileMenuContent);
+	// 	$('.sticky-header .main-menu').append(mobileMenuContent);
+		
+	// 	//Dropdown Button
+	// 	$('.mobile-menu li.dropdown .dropdown-btn').on('click', function() {
+	// 		$(this).toggleClass('open');
+	// 		$(this).prev('ul').slideToggle(500);
+	// 	});
+	// 	//Menu Toggle Btn
+	// 	$('.mobile-nav-toggler').on('click', function() {
+	// 		$('body').addClass('mobile-menu-visible');
+	// 	});
+
+	// 	//Menu Toggle Btn
+	// 	$('.mobile-menu .menu-backdrop,.mobile-menu .close-btn').on('click', function() {
+	// 		$('body').removeClass('mobile-menu-visible');
+	// 	});
+	// }
 
 
 	// Scroll to a Specific Div
-	if($('.scroll-to-target').length){
-		$(".scroll-to-target").on('click', function() {
-			var target = $(this).attr('data-target');
-		   // animate
-		   $('html, body').animate({
-			   scrollTop: $(target).offset().top
-			 }, 1000);
+	// if($('.scroll-to-target').length){
+	// 	$(".scroll-to-target").on('click', function() {
+	// 		var target = $(this).attr('data-target');
+	// 	   // animate
+	// 	   $('html, body').animate({
+	// 		   scrollTop: $(target).offset().top
+	// 		 }, 1000);
 	
-		});
+	// 	});
+	// }
+	function scrollToTarget() {
+		if($('.scroll-to-target').length){
+			$(".scroll-to-target").on('click', function() {
+				var target = $(this).attr('data-target');
+			   // animate
+			   $('html, body').animate({
+				   scrollTop: $(target).offset().top
+				 }, 1000);
+		
+			});
+		}
 	}
 
 	// Elements Animation
@@ -131,6 +172,37 @@
 			}
 			
 		},{accY: 0});
+	}
+
+	function handleFactCounter() {
+			//Fact Counter + Text Count
+	if($('.count-box').length){
+		$('.count-box').appear(function(){
+	
+			var $t = $(this),
+				n = $t.find(".count-text").attr("data-stop"),
+				r = parseInt($t.find(".count-text").attr("data-speed"), 10);
+				
+			if (!$t.hasClass("counted")) {
+				$t.addClass("counted");
+				$({
+					countNum: $t.find(".count-text").text()
+				}).animate({
+					countNum: n
+				}, {
+					duration: r,
+					easing: "linear",
+					step: function() {
+						$t.find(".count-text").text(Math.floor(this.countNum));
+					},
+					complete: function() {
+						$t.find(".count-text").text(this.countNum);
+					}
+				});
+			}
+			
+		},{accY: 0});
+	}
 	}
 
 
@@ -638,19 +710,37 @@
 	}
 
 
-	if($('.timer').length){
-	   $(function(){
-		    $('[data-countdown]').each(function() {
-		   var $this = $(this), finalDate = $(this).data('countdown');
-		   $this.countdown(finalDate, function(event) {
-		     $this.html(event.strftime('%D days %H:%M:%S'));
-		   });
-		 });
-		});
+	// if($('.timer').length){
+	//    $(function(){
+	// 	    $('[data-countdown]').each(function() {
+	// 	   var $this = $(this), finalDate = $(this).data('countdown');
+	// 	   $this.countdown(finalDate, function(event) {
+	// 	     $this.html(event.strftime('%D days %H:%M:%S'));
+	// 	   });
+	// 	 });
+	// 	});
 
-	   $('.cs-countdown').countdown('').on('update.countdown', function(event) {
-		  var $this = $(this).html(event.strftime('<div class="count-col"><span>%m</span><h3>Months</h3></div> <div class="count-col"><span>%D</span><h3>days</h3></div> <div class="count-col"><span>%H</span><h3>Hours</h3></div> <div class="count-col"><span>%M</span><h3>Minutes</h3></div> <div class="count-col"><span>%S</span><h3>Seconds</h3></div>'));
-		});
+	//    $('.cs-countdown').countdown('').on('update.countdown', function(event) {
+	// 	  var $this = $(this).html(event.strftime('<div class="count-col"><span>%m</span><h3>Months</h3></div> <div class="count-col"><span>%D</span><h3>days</h3></div> <div class="count-col"><span>%H</span><h3>Hours</h3></div> <div class="count-col"><span>%M</span><h3>Minutes</h3></div> <div class="count-col"><span>%S</span><h3>Seconds</h3></div>'));
+	// 	});
+	// }
+
+	function handleCountDown() {
+		
+	if($('.timer').length){
+		$(function(){
+			 $('[data-countdown]').each(function() {
+			var $this = $(this), finalDate = $(this).data('countdown');
+			$this.countdown(finalDate, function(event) {
+			  $this.html(event.strftime('%D days %H:%M:%S'));
+			});
+		  });
+		 });
+ 
+		$('.cs-countdown').countdown('').on('update.countdown', function(event) {
+		   var $this = $(this).html(event.strftime('<div class="count-col"><span>%m</span><h3>Months</h3></div> <div class="count-col"><span>%D</span><h3>days</h3></div> <div class="count-col"><span>%H</span><h3>Hours</h3></div> <div class="count-col"><span>%M</span><h3>Minutes</h3></div> <div class="count-col"><span>%S</span><h3>Seconds</h3></div>'));
+		 });
+	 }
 	}
 
 
@@ -710,6 +800,10 @@
 	jQuery(document).on('ready', function () {
 		(function ($) {
 			// add your functions
+			handleCountDown();
+			handleFactCounter();
+			scrollToTarget();
+			handleMobileMenu();
 			progressBarConfig ();
 			selectDropdown();
 			donatepopup();
@@ -741,4 +835,4 @@
 
 	
 
-})(window.jQuery);
+})(jQuery);
