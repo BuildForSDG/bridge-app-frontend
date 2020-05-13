@@ -7,7 +7,9 @@ import { LandingPageComponent } from './views/components/landing-page/landing-pa
 import { AboutUsComponent } from './views/components/about-us/about-us.component';
 import { ExtDefaultLayoutComponent } from './containers/ext-default-layout/ext-default-layout.component';
 import { IntDefaultLayoutComponent } from './containers/int-default-layout/int-default-layout.component';
+import { JQ_TOKEN } from './_services/jQuery.service';
 
+let jQuery = window["$"];
 @NgModule({
   declarations: [
     AppComponent,
@@ -20,7 +22,9 @@ import { IntDefaultLayoutComponent } from './containers/int-default-layout/int-d
     BrowserModule,
     AppRoutingModule
   ],
-  providers: [],
+  providers: [
+    { provide: JQ_TOKEN, useValue: jQuery },
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
