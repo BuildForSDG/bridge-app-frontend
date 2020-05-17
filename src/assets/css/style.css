@@ -20233,6 +20233,7 @@ div#mCSB_1_container{
 
 .contact-section .contact-form-area .form-inner .form-group input[type='text'],
 .contact-section .contact-form-area .form-inner .form-group input[type='email'],
+.contact-section .contact-form-area .form-inner .form-group input[type='password'],
 .contact-section .contact-form-area .form-inner .form-group textarea{
   position: relative;
   width: 100%;
