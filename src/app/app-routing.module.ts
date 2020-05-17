@@ -12,11 +12,7 @@ const routes: Routes = [
   { path: 'about', component: AboutUsComponent },
   { path: 'contact', component: ContactUsComponent },
   { path: 'team', component: TeamComponent },
-  { path: 'auth', children: [
-    { path: '', component: LandingPageComponent},
-    { path: 'register', component: LandingPageComponent},
-    { path: 'resetpassword', component: LandingPageComponent},
-  ]}
+  { path: 'auth', loadChildren: () => import('./views/components/auth/auth.module').then(m => m.AuthModule) }
 ];
 
 @NgModule({

@@ -11,6 +11,7 @@ import { ExtDefaultFooterComponent } from './containers/ext-default-footer/ext-d
 import { JQ_TOKEN } from 'src/_services/jQuery.service';
 import { ContactUsComponent } from './views/components/contact-us/contact-us.component';
 import { TeamComponent } from './views/components/team/team.component';
+import { SharedModule } from './shared/shared/shared.module';
 
 let jQuery = window["$"];
 
@@ -19,15 +20,13 @@ let jQuery = window["$"];
     AppComponent,
     LandingPageComponent,
     AboutUsComponent,
-    ExtDefaultLayoutComponent,
-    IntDefaultLayoutComponent,
-    ExtDefaultFooterComponent,
     ContactUsComponent,
     TeamComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    SharedModule
   ],
   providers: [
     { provide: JQ_TOKEN, useValue: jQuery },
