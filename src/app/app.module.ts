@@ -10,6 +10,7 @@ import { IntDefaultLayoutComponent } from './containers/int-default-layout/int-d
 import { ExtDefaultFooterComponent } from './containers/ext-default-footer/ext-default-footer.component';
 import { JQ_TOKEN } from 'src/_services/jQuery.service';
 import { ContactUsComponent } from './views/components/contact-us/contact-us.component';
+import { TeamComponent } from './views/components/team/team.component';
 
 let jQuery = window["$"];
 
@@ -21,7 +22,8 @@ let jQuery = window["$"];
     ExtDefaultLayoutComponent,
     IntDefaultLayoutComponent,
     ExtDefaultFooterComponent,
-    ContactUsComponent
+    ContactUsComponent,
+    TeamComponent
   ],
   imports: [
     BrowserModule,
