@@ -9,6 +9,7 @@ import { ExtDefaultLayoutComponent } from './containers/ext-default-layout/ext-d
 import { IntDefaultLayoutComponent } from './containers/int-default-layout/int-default-layout.component';
 import { ExtDefaultFooterComponent } from './containers/ext-default-footer/ext-default-footer.component';
 import { JQ_TOKEN } from 'src/_services/jQuery.service';
+import { ContactUsComponent } from './views/components/contact-us/contact-us.component';
 
 let jQuery = window["$"];
 
@@ -19,7 +20,8 @@ let jQuery = window["$"];
     AboutUsComponent,
     ExtDefaultLayoutComponent,
     IntDefaultLayoutComponent,
-    ExtDefaultFooterComponent
+    ExtDefaultFooterComponent,
+    ContactUsComponent
   ],
   imports: [
     BrowserModule,
