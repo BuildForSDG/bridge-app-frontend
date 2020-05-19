@@ -12,7 +12,8 @@ const routes: Routes = [
   { path: 'about', component: AboutUsComponent },
   { path: 'contact', component: ContactUsComponent },
   { path: 'team', component: TeamComponent },
-  { path: 'auth', loadChildren: () => import('./views/components/auth/auth.module').then(m => m.AuthModule) }
+  { path: 'auth', loadChildren: () => import('./views/components/auth/auth.module').then(m => m.AuthModule) },
+  { path: 'member-area', loadChildren: () => import('./views/member-area/member-area.module').then(m => m.MemberAreaModule) }
 ];
 
 @NgModule({

@@ -1,0 +1,67 @@
+<header>
+    <div id="loadedContent">
+        <div class="container">
+            <nav class="navbar navbar-expand-lg navbar-light bg-light">
+                <a class="navbar-brand">
+                    <img src="../../../assets/images/small-logo-a.png" alt="Proqura Logo">
+                </a>
+                <button class="navbar-toggler d-lg-none" type="button" data-toggle="collapse" data-target="#collapsibleNavId" aria-controls="collapsibleNavId"
+                    aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="toggler-icon"></span>
+                    <span class="toggler-icon"></span>
+                    <span class="toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="collapsibleNavId">
+                    <ul class="navbar-nav mt-2 mt-lg-0 mx-auto">
+                        <div class="links">
+                            <li class="nav-item" (click)="routeToDashboard()">
+                                <a class="nav-link">Home </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" (click)="routeToProjects()">Events</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" (click)="routeToResources()">System Setup</a>
+                            </li>
+                            <li class="nav-item" ngbDropdown>
+                                <a class="nav-link" id="requests" ngbDropdownToggle>Users</a>
+                                <div class="dropdown-menu" ngbDropdownMenu aria-labelledby="requests">
+                                    <a class="dropdown-item d-flex align-items-center" (click)="routeToRequests()">Students</a>
+                                    <a class="dropdown-item d-flex align-items-center" (click)="routeToApprovedRequests()">Organizers</a>
+                                    <a class="dropdown-item d-flex align-items-center" (click)="routeToApprovedRequests()">Sponsors</a>
+                                </div>
+                            </li>
+                        </div>
+                        <div class="form-group">
+                            <input type="text" class="form-control global-search" id="search" placeholder="Search...">
+                        </div>
+                    </ul>
+                    <div class="my-2 my-lg-0 account d-flex">
+                        <div class="notification">
+                            <a routerLink="/admin/notifications" routerLinkActive="router-link-active" >
+                            <img src="../../../assets/images/notification.svg" alt="Notification Icon">
+                            <span class="badge badge-danger">{{unReadNotifications?.length}}</span>
+                            </a>
+                        </div>
+                        <div ngbDropdown>
+                            <button class="dropdown-arrow" type="button"id="profileDropdown" ngbDropdownToggle>
+                                <div class="account-info d-inline-block">
+                                    <p>{{ activeStaff?.firstName }} {{ activeStaff?.lastName }}</p>
+                                    <small>{{ activeStaff?.userRoles[0]?.roleName}}</small>
+                                </div>
+                                <div class="dropdown-icon ml-2 d-inline-block">
+                                    <img src="../../../assets/images/chevron.svg" alt="Dropdown">
+                                </div>
+                            </button>
+                            <div class="dropdown-menu" ngbDropdownMenu aria-labelledby="profileDropdown">
+                                <a class="dropdown-item d-flex align-items-center"><i class="icofont-ui-user mr-3"></i>Profile</a>
+                                <a class="dropdown-item d-flex align-items-center" (click)="routeToSettings()"><i class="icofont-settings mr-3"></i>Settings</a>
+                                <a class="dropdown-item d-flex align-items-center"(click)="logout()"><i class="icofont-logout mr-3"></i>Logout</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+      </nav>
+    </div>
+  </div>
+</header>

@@ -12,6 +12,7 @@ import { JQ_TOKEN } from 'src/_services/jQuery.service';
 import { ContactUsComponent } from './views/components/contact-us/contact-us.component';
 import { TeamComponent } from './views/components/team/team.component';
 import { SharedModule } from './shared/shared/shared.module';
+import { NgbModule } from "@ng-bootstrap/ng-bootstrap";
 
 let jQuery = window["$"];
 
@@ -26,6 +27,7 @@ let jQuery = window["$"];
   imports: [
     BrowserModule,
     AppRoutingModule,
+    NgbModule,
     SharedModule
   ],
   providers: [
