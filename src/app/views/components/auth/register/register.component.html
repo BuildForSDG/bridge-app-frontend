@@ -1,0 +1,107 @@
+<app-ext-default-layout></app-ext-default-layout>
+
+
+    <!-- page-title -->
+    <section class="page-title" style="background-image: url(../../../../assets/images/background/pagetitle-bg.png);">
+        <div class="anim-icons">
+            <div class="icon icon-1"><img src="../../../../assets/images/icons/anim-icon-17.png" alt=""></div>
+            <div class="icon icon-2 rotate-me"><img src="../../../../assets/images/icons/anim-icon-18.png" alt=""></div>
+            <div class="icon icon-3 rotate-me"><img src="../../../../assets/images/icons/anim-icon-19.png" alt=""></div>
+            <div class="icon icon-4"></div>
+        </div>
+        <div class="container">
+            <div class="content-box clearfix">
+                <div class="title-box pull-left">
+                    <h1>Register</h1>
+                    <p>Create an account now, provide your details.</p>
+                </div>
+                <ul class="bread-crumb pull-right">
+                    <li>Register</li>
+                    <li><a routerLink = "/home">Home</a></li>
+                </ul>
+            </div>
+        </div>
+    </section>
+    <!-- page-title end -->
+
+
+    <!-- contact-section -->
+    <section class="contact-section">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-6 col-md-12 col-sm-12 offset-lg-1 big-column">
+                    <div class="contact-form-area">
+                        <div class="sec-title center"><h2>Register Now</h2></div>
+                        <div class="form-inner">
+                            <form id="contact-form" class="default-form"> 
+                                <div class="row">
+                                    <div class="col-lg-12 col-md-12 col-sm-12 column">
+                                        <div class="form-group">
+                                            <i class="fas fa-user"></i>
+                                            <input type="text" name="username" placeholder="Full Name" required>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-12 col-md-12 col-sm-12 column">
+                                        <div class="form-group">
+                                            <i class="fas fa-envelope"></i>
+                                            <input type="email" name="email" placeholder="Email" required>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-12 col-md-12 col-sm-12 column">
+                                        <div class="form-group">
+                                            <i class="fas fa-lock"></i>
+                                            <input type="password" name="password" placeholder="Password" required>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-12 col-md-12 col-sm-12 column">
+                                        <div class="form-group">
+                                            <i class="fas fa-lock"></i>
+                                            <input type="password" name="cPassword" placeholder="Confirm Password" required>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-12 col-md-12 col-sm-12 column">
+                                        <div class="form-group message-btn centred">
+                                            <button type="submit" class="theme-btn-two" name="submit-form">Create Account</button>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-12 col-md-12 col-sm-12 column text-center mt-3">
+                                        <p class="font-weight-bold">Already have an account, <a class = "hover text-primary" routerLink = "/auth">Login Now</a></p>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- contact-section end -->
+
+
+    <!-- map-section -->
+    <section class="map-section">
+        <div class="google-map-area">
+            <div 
+                class="google-map" 
+                id="contact-google-map" 
+                data-map-lat="40.712776" 
+                data-map-lng="-74.005974" 
+                data-icon-path="../../../../assets/images/icons/map-marker.png"  
+                data-map-title="Brooklyn, New York, United Kingdom" 
+                data-map-zoom="12" 
+                data-markers='{
+                    "marker-1": [40.712776, -74.005974, "<h4>Branch Office</h4><p>77/99 New York</p>","../../../../assets/images/icons/map-marker.png"]
+                }'>
+
+            </div>
+        </div>
+    </section>
+    <!-- map-section end -->
+
+    <app-ext-default-footer></app-ext-default-footer>
+    
+    <!--Scroll to top-->
+    <button class="scroll-top scroll-to-target" data-target="html">
+        <span class="fa fa-arrow-up"></span>
+    </button>
+
