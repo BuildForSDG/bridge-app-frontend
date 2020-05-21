@@ -1,5 +1,7 @@
 # BridgeAppFrontend
 
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/13844123b532418f849eeab490629368)](https://app.codacy.com/gh/BuildForSDG/bridge-app-frontend?utm_source=github.com&utm_medium=referral&utm_content=BuildForSDG/bridge-app-frontend&utm_campaign=Badge_Grade_Settings)
+
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.3.14.
 
 ## Development server
